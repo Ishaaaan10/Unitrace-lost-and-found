@@ -1,5 +1,6 @@
 @echo off
 setlocal
+set PATH=C:\Users\HP\AppData\Local\Programs\portable-tools\nodejs;C:\Users\HP\AppData\Local\Programs\portable-tools\git\cmd;%PATH%
 echo ========================================================
 echo   UniTrace - Push to Your GitHub Repository
 echo ========================================================
