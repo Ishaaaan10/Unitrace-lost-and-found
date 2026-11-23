@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-slate-50">
+      <body className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
         <AuthProvider>
           <ItemsProvider>
             <Navbar />

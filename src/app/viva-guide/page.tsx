@@ -193,39 +193,39 @@ export default function VivaGuidePage() {
       </div>
 
       {/* Architecture Overview Diagram */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+      <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-md">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-300 bg-brand-950/80 px-2.5 py-0.5 rounded-md border border-brand-800/80">
             <Layers className="w-3.5 h-3.5" /> Fullstack Architectural Blueprint
           </div>
-          <h2 className="text-xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-xl font-black text-white tracking-tight">
             System Design & Technology Stack
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
           {/* Frontend Tier */}
-          <div className="border border-slate-200 rounded-2xl p-5 space-y-2.5 bg-slate-50/50">
-            <div className="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center font-bold">
+          <div className="border border-slate-800 rounded-2xl p-5 space-y-2.5 bg-slate-950/80">
+            <div className="w-8 h-8 rounded-lg bg-brand-950 text-brand-400 border border-brand-800 flex items-center justify-center font-bold">
               <Code className="w-4 h-4" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm">Frontend Presentation</h3>
-            <ul className="space-y-1.5 text-slate-600 text-[11px]">
+            <h3 className="font-bold text-white text-sm">Frontend Presentation</h3>
+            <ul className="space-y-1.5 text-slate-300 text-[11px]">
               <li>• Next.js 14 App Router</li>
               <li>• React 18 Functional Components</li>
-              <li>• Tailwind CSS Design System</li>
+              <li>• Tailwind CSS Dark Theme</li>
               <li>• Lucide Modern Icons</li>
               <li>• Responsive Grid & Flexbox</li>
             </ul>
           </div>
 
           {/* State & Logic Tier */}
-          <div className="border border-slate-200 rounded-2xl p-5 space-y-2.5 bg-slate-50/50">
-            <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+          <div className="border border-slate-800 rounded-2xl p-5 space-y-2.5 bg-slate-950/80">
+            <div className="w-8 h-8 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800 flex items-center justify-center font-bold">
               <Cpu className="w-4 h-4" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm">State & Algorithms</h3>
-            <ul className="space-y-1.5 text-slate-600 text-[11px]">
+            <h3 className="font-bold text-white text-sm">State & Algorithms</h3>
+            <ul className="space-y-1.5 text-slate-300 text-[11px]">
               <li>• React Context API (Auth & Items)</li>
               <li>• Smart Weighted Match Engine</li>
               <li>• Text Tokenization & Jaccard Weight</li>
@@ -235,12 +235,12 @@ export default function VivaGuidePage() {
           </div>
 
           {/* Backend & REST API */}
-          <div className="border border-slate-200 rounded-2xl p-5 space-y-2.5 bg-slate-50/50">
-            <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+          <div className="border border-slate-800 rounded-2xl p-5 space-y-2.5 bg-slate-950/80">
+            <div className="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800 flex items-center justify-center font-bold">
               <Server className="w-4 h-4" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm">Backend & APIs</h3>
-            <ul className="space-y-1.5 text-slate-600 text-[11px]">
+            <h3 className="font-bold text-white text-sm">Backend & APIs</h3>
+            <ul className="space-y-1.5 text-slate-300 text-[11px]">
               <li>• Next.js Serverless Route Handlers</li>
               <li>• RESTful JSON Endpoints</li>
               <li>• Cryptographic 6-digit OTP logic</li>
@@ -250,12 +250,12 @@ export default function VivaGuidePage() {
           </div>
 
           {/* Deployment & DevOps */}
-          <div className="border border-slate-200 rounded-2xl p-5 space-y-2.5 bg-slate-50/50">
-            <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+          <div className="border border-slate-800 rounded-2xl p-5 space-y-2.5 bg-slate-950/80">
+            <div className="w-8 h-8 rounded-lg bg-amber-950 text-amber-400 border border-amber-800 flex items-center justify-center font-bold">
               <Database className="w-4 h-4" />
             </div>
-            <h3 className="font-bold text-slate-900 text-sm">Deployment & Cloud</h3>
-            <ul className="space-y-1.5 text-slate-600 text-[11px]">
+            <h3 className="font-bold text-white text-sm">Deployment & Cloud</h3>
+            <ul className="space-y-1.5 text-slate-300 text-[11px]">
               <li>• Hosted on Vercel App</li>
               <li>• GitHub Version Controlled</li>
               <li>• Zero-Config Serverless Deployment</li>
@@ -267,15 +267,15 @@ export default function VivaGuidePage() {
       </div>
 
       {/* Viva Questions & Answers Accordion */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
+      <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-md mb-1">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-300 bg-brand-950/80 border border-brand-800/80 px-2.5 py-0.5 rounded-md mb-1">
             <BookOpen className="w-3.5 h-3.5" /> Examiner FAQ
           </div>
-          <h2 className="text-xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-xl font-black text-white tracking-tight">
             Top 8 Fullstack Lab Viva Questions & Answers
           </h2>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             Click on any question below to inspect the expected response and key concepts to mention.
           </p>
         </div>
@@ -286,13 +286,13 @@ export default function VivaGuidePage() {
             return (
               <div
                 key={idx}
-                className="border border-slate-200 rounded-2xl overflow-hidden transition"
+                className="border border-slate-800 rounded-2xl overflow-hidden transition"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 bg-slate-50/50 hover:bg-slate-50 transition cursor-pointer"
+                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 bg-slate-950/80 hover:bg-slate-850 transition cursor-pointer"
                 >
-                  <span className="font-bold text-slate-900 text-xs sm:text-sm">
+                  <span className="font-bold text-white text-xs sm:text-sm">
                     {q.question}
                   </span>
                   {isOpen ? (
@@ -303,17 +303,17 @@ export default function VivaGuidePage() {
                 </button>
 
                 {isOpen && (
-                  <div className="p-5 bg-white border-t border-slate-100 space-y-4 text-xs">
-                    <p className="text-slate-700 leading-relaxed font-sans">{q.answer}</p>
+                  <div className="p-5 bg-slate-950 border-t border-slate-800 space-y-4 text-xs">
+                    <p className="text-slate-300 leading-relaxed font-sans">{q.answer}</p>
 
-                    <div className="bg-brand-50/60 p-3.5 rounded-xl border border-brand-100 space-y-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-800 block">
+                    <div className="bg-brand-950/60 p-3.5 rounded-xl border border-brand-800/80 space-y-1.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-300 block">
                         Key Points to Mention to Examiner:
                       </span>
-                      <ul className="space-y-1 text-slate-700 text-[11px]">
+                      <ul className="space-y-1 text-slate-300 text-[11px]">
                         {q.keyPoints.map((point, pIdx) => (
                           <li key={pIdx} className="flex items-center gap-1.5">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-600 shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-400 shrink-0" />
                             <span>{point}</span>
                           </li>
                         ))}

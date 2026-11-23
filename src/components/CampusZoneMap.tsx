@@ -38,16 +38,16 @@ export default function CampusZoneMap({
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden p-6 sm:p-8 space-y-6">
+    <div className="bg-slate-900/90 rounded-3xl border border-slate-800 shadow-xl overflow-hidden p-6 sm:p-8 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-md mb-1">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-300 bg-brand-950/80 px-2.5 py-0.5 rounded-md mb-1 border border-brand-800/80">
             <Compass className="w-3.5 h-3.5" /> Interactive Campus Geospatial Grid
           </div>
-          <h3 className="text-xl font-black text-slate-900 tracking-tight">
+          <h3 className="text-xl font-black text-white tracking-tight">
             Campus Zones & Incident Hotspots
           </h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             Click on any university landmark to inspect active lost and found reports in that zone.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function CampusZoneMap({
         {activeZone && (
           <button
             onClick={() => handleZoneClick(activeZone)}
-            className="self-start sm:self-auto text-xs font-semibold text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition cursor-pointer"
+            className="self-start sm:self-auto text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg transition cursor-pointer"
           >
             Clear Selection
           </button>
@@ -63,7 +63,7 @@ export default function CampusZoneMap({
       </div>
 
       {/* SVG Campus Map Graphic Container */}
-      <div className="relative aspect-16/10 sm:aspect-21/9 bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-inner">
+      <div className="relative aspect-16/10 sm:aspect-21/9 bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 shadow-inner">
         {/* Campus Map Background Graphic Pattern */}
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]" />
 
@@ -140,35 +140,35 @@ export default function CampusZoneMap({
 
       {/* Selected Zone Deep Dive Card */}
       {activeZone && (
-        <div className="bg-brand-50/70 border border-brand-200 rounded-2xl p-5 animate-in fade-in slide-in-from-top-2">
+        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 animate-in fade-in slide-in-from-top-2">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="text-base font-extrabold text-slate-900">{activeZone.name}</h4>
+                <h4 className="text-base font-extrabold text-white">{activeZone.name}</h4>
                 <span className="bg-brand-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
                   {activeZone.code}
                 </span>
               </div>
-              <p className="text-xs text-slate-600 mt-0.5">{activeZone.building}</p>
-              <p className="text-xs text-slate-500 mt-1 italic">{activeZone.description}</p>
+              <p className="text-xs text-slate-300 mt-0.5">{activeZone.building}</p>
+              <p className="text-xs text-slate-400 mt-1 italic">{activeZone.description}</p>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="text-center bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-2xs">
-                <span className="text-[10px] font-bold text-rose-600 block uppercase">Lost Here</span>
-                <span className="text-base font-black text-slate-900">
+              <div className="text-center bg-slate-900 px-3 py-2 rounded-xl border border-slate-800 shadow-2xs">
+                <span className="text-[10px] font-bold text-rose-400 block uppercase">Lost Here</span>
+                <span className="text-base font-black text-white">
                   {getZoneStats(activeZone.id).lost}
                 </span>
               </div>
-              <div className="text-center bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-2xs">
-                <span className="text-[10px] font-bold text-emerald-600 block uppercase">Found Here</span>
-                <span className="text-base font-black text-slate-900">
+              <div className="text-center bg-slate-900 px-3 py-2 rounded-xl border border-slate-800 shadow-2xs">
+                <span className="text-[10px] font-bold text-emerald-400 block uppercase">Found Here</span>
+                <span className="text-base font-black text-white">
                   {getZoneStats(activeZone.id).found}
                 </span>
               </div>
               <Link
                 href={`/items?zone=${activeZone.id}`}
-                className="inline-flex items-center gap-1.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-xs"
+                className="inline-flex items-center gap-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-xs"
               >
                 Browse Items
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -128,43 +128,43 @@ export default function HomePage() {
       {/* Metrics & Impact Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+          <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 shadow-lg flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-brand-950/80 text-brand-400 border border-brand-800/60 flex items-center justify-center shrink-0">
               <Award className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-black text-slate-900">{recoveryRate}%</p>
-              <p className="text-xs text-slate-500 font-medium">Campus Recovery Rate</p>
+              <p className="text-2xl font-black text-white">{recoveryRate}%</p>
+              <p className="text-xs text-slate-400 font-medium">Campus Recovery Rate</p>
             </div>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+          <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 shadow-lg flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 flex items-center justify-center shrink-0">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-black text-slate-900">{returnedCount}</p>
-              <p className="text-xs text-slate-500 font-medium">Items Successfully Restored</p>
+              <p className="text-2xl font-black text-white">{returnedCount}</p>
+              <p className="text-xs text-slate-400 font-medium">Items Successfully Restored</p>
             </div>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+          <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 shadow-lg flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-amber-950/80 text-amber-400 border border-amber-800/60 flex items-center justify-center shrink-0">
               <Clock className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-black text-slate-900">&lt; 24 Hrs</p>
-              <p className="text-xs text-slate-500 font-medium">Avg Handover Turnaround</p>
+              <p className="text-2xl font-black text-white">&lt; 24 Hrs</p>
+              <p className="text-xs text-slate-400 font-medium">Avg Handover Turnaround</p>
             </div>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-lg flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+          <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 shadow-lg flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-indigo-950/80 text-indigo-400 border border-indigo-800/60 flex items-center justify-center shrink-0">
               <Shield className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-2xl font-black text-slate-900">100%</p>
-              <p className="text-xs text-slate-500 font-medium">Verified Ownership Security</p>
+              <p className="text-2xl font-black text-white">100%</p>
+              <p className="text-xs text-slate-400 font-medium">Verified Ownership Security</p>
             </div>
           </div>
         </div>
@@ -174,24 +174,24 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+            <h2 className="text-2xl font-black text-white tracking-tight">
               Recently Reported Articles
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-400">
               Live updates across all university departments, laboratories, and residence halls.
             </p>
           </div>
 
           {/* Type Filter Pills */}
-          <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl self-start sm:self-auto">
+          <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 p-1 rounded-xl self-start sm:self-auto">
             {(['ALL', 'LOST', 'FOUND'] as const).map((t) => (
               <button
                 key={t}
                 onClick={() => setFilterType(t)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
                   filterType === t
-                    ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'bg-brand-950 text-brand-300 border border-brand-700/60 shadow-xs'
+                    : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {t === 'ALL' ? 'All Items' : t === 'LOST' ? 'Lost Items' : 'Found Items'}
@@ -211,7 +211,7 @@ export default function HomePage() {
         <div className="text-center pt-4">
           <Link
             href="/items"
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow-md"
+            className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-brand-600/30"
           >
             Explore All Campus Records ({totalCount})
             <ArrowRight className="w-4 h-4" />

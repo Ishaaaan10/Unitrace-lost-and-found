@@ -108,40 +108,40 @@ export default function ReportLostItemPage() {
       <div>
         <Link
           href="/items"
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-900 transition mb-4"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-white transition mb-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Directory
         </Link>
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-md mb-1 border border-rose-200">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-300 bg-rose-950/60 px-2.5 py-0.5 rounded-md mb-1 border border-rose-800/80">
           <ShieldAlert className="w-3.5 h-3.5" /> Official Lost Article Filing
         </div>
-        <h1 className="text-3xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-3xl font-black text-white tracking-tight">
           Report a Lost Item
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <p className="text-xs sm:text-sm text-slate-400 mt-1">
           Provide complete item details. Our AI matcher immediately indexes your report against all found items registered on campus.
         </p>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+      <form onSubmit={handleSubmit} className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
         {/* Reporter info bar */}
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
+        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
           <div>
-            <span className="text-slate-400 block text-[10px] font-bold uppercase">Reporting Student</span>
-            <span className="font-bold text-slate-900">{currentUser.name}</span> ({currentUser.rollNo})
+            <span className="text-slate-500 block text-[10px] font-bold uppercase">Reporting Student</span>
+            <span className="font-bold text-white">{currentUser.name}</span> ({currentUser.rollNo})
           </div>
           <div className="text-left sm:text-right">
-            <span className="text-slate-400 block text-[10px] font-bold uppercase">Official University Contact</span>
-            <span className="text-slate-600 font-mono">{currentUser.email} • {currentUser.phone}</span>
+            <span className="text-slate-500 block text-[10px] font-bold uppercase">Official University Contact</span>
+            <span className="text-slate-300 font-mono">{currentUser.email} • {currentUser.phone}</span>
           </div>
         </div>
 
         {/* Item Title & Category */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Item Title / Name <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Item Title / Name <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
@@ -149,18 +149,18 @@ export default function ReportLostItemPage() {
               placeholder="e.g. MacBook Air M2 Space Grey, Casio Calculator..."
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Category <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Category <span className="text-rose-400">*</span>
             </label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as ItemCategory)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             >
               <option value="ELECTRONICS">Electronics & Gadgets</option>
               <option value="WALLETS_IDS">Wallets & University IDs</option>
@@ -177,13 +177,13 @@ export default function ReportLostItemPage() {
         {/* Location & Time */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Campus Facility / Zone <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Campus Facility / Zone <span className="text-rose-400">*</span>
             </label>
             <select
               value={campusZoneId}
               onChange={(e) => setCampusZoneId(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             >
               {CAMPUS_ZONES.map((z) => (
                 <option key={z.id} value={z.id}>
@@ -194,8 +194,8 @@ export default function ReportLostItemPage() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Specific Room / Location Detail <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Specific Room / Location Detail <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
@@ -203,42 +203,42 @@ export default function ReportLostItemPage() {
               placeholder="e.g. 2nd Floor Reading Room Cubicle 14, Table near water cooler..."
               value={specificLocation}
               onChange={(e) => setSpecificLocation(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Approximate Date Lost <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Approximate Date Lost <span className="text-rose-400">*</span>
             </label>
             <input
               type="date"
               required
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
+            <label className="block text-xs font-bold text-slate-300">
               Approximate Time
             </label>
             <input
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         {/* Detailed Physical Description */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold text-slate-700">
-            Public Physical Description <span className="text-rose-500">*</span>
+          <label className="block text-xs font-bold text-slate-300">
+            Public Physical Description <span className="text-rose-400">*</span>
           </label>
           <textarea
             required
@@ -246,21 +246,21 @@ export default function ReportLostItemPage() {
             placeholder="Describe make, model, color, brand, and visible marks that help people recognize it..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full text-xs sm:text-sm p-3.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+            className="w-full text-xs sm:text-sm p-3.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
           />
         </div>
 
         {/* Anti-Theft Verification Challenge Box */}
-        <div className="bg-amber-50/70 border-2 border-amber-200/90 rounded-2xl p-5 space-y-4">
+        <div className="bg-amber-950/40 border-2 border-amber-900/60 rounded-2xl p-5 space-y-4">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
               <Lock className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-amber-950 uppercase tracking-wide">
+              <h4 className="text-xs font-bold text-amber-300 uppercase tracking-wide">
                 Anti-Theft Confidential Verification Challenge
               </h4>
-              <p className="text-[11px] text-amber-800">
+              <p className="text-[11px] text-amber-400">
                 Set a secret test to verify ownership before someone else claims your found item.
               </p>
             </div>
@@ -268,8 +268,8 @@ export default function ReportLostItemPage() {
 
           <div className="space-y-3">
             <div>
-              <label className="block text-[11px] font-bold text-slate-800 mb-1">
-                Challenge Question (Publicly visible to finder / claimant) <span className="text-rose-500">*</span>
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">
+                Challenge Question (Publicly visible to finder / claimant) <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
@@ -277,13 +277,13 @@ export default function ReportLostItemPage() {
                 placeholder="e.g. What stickers are on the back? What is the desktop wallpaper?"
                 value={secretQuestion}
                 onChange={(e) => setSecretQuestion(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-amber-500"
+                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-800/80 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-slate-800 mb-1">
-                Secret Expected Answer (Encrypted & visible only to you and Campus Security) <span className="text-rose-500">*</span>
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">
+                Secret Expected Answer (Encrypted & visible only to you and Campus Security) <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
@@ -291,7 +291,7 @@ export default function ReportLostItemPage() {
                 placeholder="e.g. GitHub sticker on left, React atom on right; Interstellar wallpaper."
                 value={secretAnswer}
                 onChange={(e) => setSecretAnswer(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-amber-500"
+                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-800/80 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
               />
             </div>
           </div>
@@ -299,24 +299,24 @@ export default function ReportLostItemPage() {
 
         {/* Optional Reward */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold text-slate-700 flex items-center gap-1.5">
-            <Gift className="w-3.5 h-3.5 text-amber-500" /> Optional Finder&apos;s Gratitude / Reward
+          <label className="block text-xs font-bold text-slate-300 flex items-center gap-1.5">
+            <Gift className="w-3.5 h-3.5 text-amber-400" /> Optional Finder&apos;s Gratitude / Reward
           </label>
           <input
             type="text"
             placeholder="e.g. ₹500, High Gratitude & Cafeteria Treat..."
             value={reward}
             onChange={(e) => setReward(e.target.value)}
-            className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+            className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
           />
         </div>
 
         {/* Photo Selection / Presets */}
         <div className="space-y-2">
-          <label className="block text-xs font-bold text-slate-700">
+          <label className="block text-xs font-bold text-slate-300">
             Article Photograph / Visual Representation
           </label>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-slate-400">
             Choose a campus preset matching your item type or paste an image URL:
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -327,8 +327,8 @@ export default function ReportLostItemPage() {
                 onClick={() => setImageUrl(preset.url)}
                 className={`p-2 rounded-xl border text-left flex items-center gap-2 transition cursor-pointer ${
                   imageUrl === preset.url
-                    ? 'border-brand-600 bg-brand-50/60 ring-2 ring-brand-500/20'
-                    : 'border-slate-200 hover:border-slate-300 bg-white'
+                    ? 'border-brand-500 bg-brand-950/80 ring-2 ring-brand-500/30'
+                    : 'border-slate-800 hover:border-slate-700 bg-slate-950'
                 }`}
               >
                 <img
@@ -336,7 +336,7 @@ export default function ReportLostItemPage() {
                   alt={preset.name}
                   className="w-9 h-9 rounded-lg object-cover"
                 />
-                <span className="text-[11px] font-bold text-slate-700 truncate">
+                <span className="text-[11px] font-bold text-slate-300 truncate">
                   {preset.name}
                 </span>
               </button>
@@ -349,23 +349,23 @@ export default function ReportLostItemPage() {
               placeholder="Or paste external custom image URL..."
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
-              className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         {/* Submit */}
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+        <div className="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
           <Link
             href="/items"
-            className="px-5 py-2.5 text-xs font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition"
+            className="px-5 py-2.5 text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition"
           >
             Cancel
           </Link>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-2.5 text-xs font-bold text-white bg-linear-to-r from-rose-600 to-red-600 hover:from-rose-700 hover:to-red-700 rounded-xl shadow-md shadow-rose-600/20 transition cursor-pointer flex items-center gap-2"
+            className="px-6 py-2.5 text-xs font-bold text-white bg-linear-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 rounded-xl shadow-md shadow-rose-600/20 transition cursor-pointer flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
             {isSubmitting ? 'Registering...' : 'Register Lost Report'}

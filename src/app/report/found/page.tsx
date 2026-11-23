@@ -108,40 +108,40 @@ export default function ReportFoundItemPage() {
       <div>
         <Link
           href="/items"
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-slate-900 transition mb-4"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-white transition mb-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Directory
         </Link>
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md mb-1 border border-emerald-200">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded-md mb-1 border border-emerald-800/80">
           <ShieldCheck className="w-3.5 h-3.5" /> Official Found Article Registration
         </div>
-        <h1 className="text-3xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-3xl font-black text-white tracking-tight">
           Report a Found Item
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <p className="text-xs sm:text-sm text-slate-400 mt-1">
           Thank you for being a responsible member of the university community. Registering the found article allows the rightful owner to claim it.
         </p>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+      <form onSubmit={handleSubmit} className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
         {/* Finder Info Bar */}
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
+        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
           <div>
-            <span className="text-slate-400 block text-[10px] font-bold uppercase">Finder / Custodian</span>
-            <span className="font-bold text-slate-900">{currentUser.name}</span> ({currentUser.rollNo})
+            <span className="text-slate-500 block text-[10px] font-bold uppercase">Finder / Custodian</span>
+            <span className="font-bold text-white">{currentUser.name}</span> ({currentUser.rollNo})
           </div>
           <div className="text-left sm:text-right">
-            <span className="text-slate-400 block text-[10px] font-bold uppercase">Department</span>
-            <span className="text-slate-600">{currentUser.department}</span>
+            <span className="text-slate-500 block text-[10px] font-bold uppercase">Department</span>
+            <span className="text-slate-300">{currentUser.department}</span>
           </div>
         </div>
 
         {/* Item Title & Category */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Found Article Title <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Found Article Title <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
@@ -149,18 +149,18 @@ export default function ReportFoundItemPage() {
               placeholder="e.g. Student ID Smartcard, Casio Calculator, Blue Bag..."
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Category <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Category <span className="text-rose-400">*</span>
             </label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as ItemCategory)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             >
               <option value="ELECTRONICS">Electronics & Gadgets</option>
               <option value="WALLETS_IDS">Wallets & University IDs</option>
@@ -177,13 +177,13 @@ export default function ReportFoundItemPage() {
         {/* Location & Time */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Where on Campus Was It Found? <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Where on Campus Was It Found? <span className="text-rose-400">*</span>
             </label>
             <select
               value={campusZoneId}
               onChange={(e) => setCampusZoneId(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             >
               {CAMPUS_ZONES.map((z) => (
                 <option key={z.id} value={z.id}>
@@ -194,8 +194,8 @@ export default function ReportFoundItemPage() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Exact Landmark / Room <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Exact Landmark / Room <span className="text-rose-400">*</span>
             </label>
             <input
               type="text"
@@ -203,53 +203,53 @@ export default function ReportFoundItemPage() {
               placeholder="e.g. Under dining bench outside Food Court, Table 3..."
               value={specificLocation}
               onChange={(e) => setSpecificLocation(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
-              Date Discovered <span className="text-rose-500">*</span>
+            <label className="block text-xs font-bold text-slate-300">
+              Date Discovered <span className="text-rose-400">*</span>
             </label>
             <input
               type="date"
               required
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-700">
+            <label className="block text-xs font-bold text-slate-300">
               Time Discovered
             </label>
             <input
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         {/* Current Custody & Locker */}
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
-            <Building className="w-4 h-4 text-brand-600" /> Current Physical Holding & Custody
+        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-bold text-white">
+            <Building className="w-4 h-4 text-brand-400" /> Current Physical Holding & Custody
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-[11px] font-bold text-slate-600 mb-1">
+              <label className="block text-[11px] font-bold text-slate-400 mb-1">
                 Where is the item currently kept?
               </label>
               <select
                 value={custody}
                 onChange={(e) => setCustody(e.target.value as CustodyLocation)}
-                className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+                className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900 text-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
               >
                 <option value="CAMPUS_SECURITY_DESK">Deposited at Gate 1 Main Security Desk</option>
                 <option value="WITH_FINDER">Kept safely with Finder</option>
@@ -259,7 +259,7 @@ export default function ReportFoundItemPage() {
 
             {custody === 'CAMPUS_SECURITY_DESK' && (
               <div>
-                <label className="block text-[11px] font-bold text-slate-600 mb-1">
+                <label className="block text-[11px] font-bold text-slate-400 mb-1">
                   Security Locker / Storage Bin #
                 </label>
                 <input
@@ -267,7 +267,7 @@ export default function ReportFoundItemPage() {
                   placeholder="e.g. Locker Shelf B-14, Drawer A-02"
                   value={lockerNumber}
                   onChange={(e) => setLockerNumber(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+                  className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                 />
               </div>
             )}
@@ -276,8 +276,8 @@ export default function ReportFoundItemPage() {
 
         {/* Description */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold text-slate-700">
-            General Description (Avoid giving away secret features!) <span className="text-rose-500">*</span>
+          <label className="block text-xs font-bold text-slate-300">
+            General Description (Avoid giving away secret features!) <span className="text-rose-400">*</span>
           </label>
           <textarea
             required
@@ -285,22 +285,22 @@ export default function ReportFoundItemPage() {
             placeholder="Describe the article broadly. Note: Do not reveal secret items inside or lockscreen details so you can test real owners!"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full text-xs sm:text-sm p-3.5 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+            className="w-full text-xs sm:text-sm p-3.5 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
           />
         </div>
 
         {/* Verification Challenge */}
-        <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 space-y-3">
-          <div className="flex items-center gap-2 text-xs font-bold text-amber-950">
-            <Lock className="w-4 h-4 text-amber-600" />
+        <div className="bg-amber-950/40 border border-amber-900/60 rounded-2xl p-5 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-bold text-amber-300">
+            <Lock className="w-4 h-4 text-amber-400" />
             Verification Question for Anyone Claiming This Article
           </div>
-          <p className="text-[11px] text-amber-800">
+          <p className="text-[11px] text-amber-400">
             Ask a specific question only the true owner would know:
           </p>
           <div className="space-y-3">
             <div>
-              <label className="block text-[11px] font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">
                 Challenge Question
               </label>
               <input
@@ -308,11 +308,11 @@ export default function ReportFoundItemPage() {
                 placeholder="e.g. Whose name is on the front? What is the wallpaper? What is in the front pocket?"
                 value={secretQuestion}
                 onChange={(e) => setSecretQuestion(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-amber-500"
+                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-800/80 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div>
-              <label className="block text-[11px] font-bold text-slate-700 mb-1">
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">
                 Actual Secret Answer (For Security Officer Reference)
               </label>
               <input
@@ -320,7 +320,7 @@ export default function ReportFoundItemPage() {
                 placeholder="e.g. Priya Patel 23BBT089, Red Casio calculator inside, etc."
                 value={secretAnswer}
                 onChange={(e) => setSecretAnswer(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-300 bg-white focus:outline-hidden focus:ring-2 focus:ring-amber-500"
+                className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-amber-800/80 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-500"
               />
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function ReportFoundItemPage() {
 
         {/* Photo Selection */}
         <div className="space-y-2">
-          <label className="block text-xs font-bold text-slate-700">
+          <label className="block text-xs font-bold text-slate-300">
             Photograph
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -339,8 +339,8 @@ export default function ReportFoundItemPage() {
                 onClick={() => setImageUrl(preset.url)}
                 className={`p-2 rounded-xl border text-left flex items-center gap-2 transition cursor-pointer ${
                   imageUrl === preset.url
-                    ? 'border-brand-600 bg-brand-50/60 ring-2 ring-brand-500/20'
-                    : 'border-slate-200 hover:border-slate-300 bg-white'
+                    ? 'border-brand-500 bg-brand-950/80 ring-2 ring-brand-500/30'
+                    : 'border-slate-800 hover:border-slate-700 bg-slate-950'
                 }`}
               >
                 <img
@@ -348,7 +348,7 @@ export default function ReportFoundItemPage() {
                   alt={preset.name}
                   className="w-9 h-9 rounded-lg object-cover"
                 />
-                <span className="text-[11px] font-bold text-slate-700 truncate">
+                <span className="text-[11px] font-bold text-slate-300 truncate">
                   {preset.name}
                 </span>
               </button>
@@ -361,23 +361,23 @@ export default function ReportFoundItemPage() {
               placeholder="Or paste external custom image URL..."
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
-              className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              className="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-950 text-white placeholder-slate-500 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>
 
         {/* Submit */}
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+        <div className="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
           <Link
             href="/items"
-            className="px-5 py-2.5 text-xs font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition"
+            className="px-5 py-2.5 text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition"
           >
             Cancel
           </Link>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-2.5 text-xs font-bold text-white bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl shadow-md shadow-emerald-600/20 transition cursor-pointer flex items-center gap-2"
+            className="px-6 py-2.5 text-xs font-bold text-white bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-xl shadow-md shadow-emerald-600/20 transition cursor-pointer flex items-center gap-2"
           >
             <Sparkles className="w-4 h-4" />
             {isSubmitting ? 'Registering...' : 'Register Found Article'}
