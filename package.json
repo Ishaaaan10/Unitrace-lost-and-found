@@ -2,6 +2,7 @@
   "name": "unitrace-campus-lost-and-found",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://unitrace-lostandfound.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

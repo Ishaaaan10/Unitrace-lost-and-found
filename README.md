@@ -1,6 +1,25 @@
 # 🎓 UniTrace — Campus Lost & Found Recovery Network
 > **Full-Stack Web Development Lab Project | University Campus Systems**  
-> *Engineered for instant deployment on [Vercel](https://vercel.com) & version-controlled with Git.*
+> 🌐 **Live Web Application:** [https://unitrace-lostandfound.vercel.app](https://unitrace-lostandfound.vercel.app)
+
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-black?style=for-the-badge&logo=vercel)](https://unitrace-lostandfound.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/Ishaaaan10/unitrace-lost-and-found)
+[![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
+
+---
+
+## 🌐 Live Deployment Links
+
+- **Main Application Feed:** [https://unitrace-lostandfound.vercel.app](https://unitrace-lostandfound.vercel.app)
+- **Browse Campus Articles:** [https://unitrace-lostandfound.vercel.app/items](https://unitrace-lostandfound.vercel.app/items)
+- **Report Lost Article:** [https://unitrace-lostandfound.vercel.app/report/lost](https://unitrace-lostandfound.vercel.app/report/lost)
+- **Report Found Article:** [https://unitrace-lostandfound.vercel.app/report/found](https://unitrace-lostandfound.vercel.app/report/found)
+- **Security Directorate Terminal:** [https://unitrace-lostandfound.vercel.app/security-desk](https://unitrace-lostandfound.vercel.app/security-desk)
+- **Interactive Campus Zone Map:** [https://unitrace-lostandfound.vercel.app/campus-map](https://unitrace-lostandfound.vercel.app/campus-map)
+- **Student Dashboard:** [https://unitrace-lostandfound.vercel.app/dashboard](https://unitrace-lostandfound.vercel.app/dashboard)
+- **Fullstack Lab Viva Defense Manual:** [https://unitrace-lostandfound.vercel.app/viva-guide](https://unitrace-lostandfound.vercel.app/viva-guide)
 
 ---
 
