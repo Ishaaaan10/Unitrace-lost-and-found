@@ -6,18 +6,28 @@ cd /d "%~dp0"
 echo ========================================================
 echo   UniTrace - Push to GitHub (Ishaaaan10)
 echo ========================================================
-echo Target Repository: https://github.com/Ishaaaan10/unitrace-lost-and-found.git
+echo Target: https://github.com/Ishaaaan10/unitrace-lost-and-found
 echo.
+echo Option A: If you have a GitHub Personal Access Token (PAT),
+echo          paste it below to push instantly without prompts.
+echo.
+echo Option B: Or simply press ENTER to push using your browser login.
+echo ========================================================
+echo.
+set /p GH_TOKEN="GitHub Token (or press ENTER to skip): "
 
 git remote remove origin 2>nul
 git remote add origin https://github.com/Ishaaaan10/unitrace-lost-and-found.git
 git branch -M main
 
-echo Pushing all files to GitHub...
-echo (If prompted by GitHub, click 'Sign in with your browser' in the popup window)
 echo.
+echo Pushing project to GitHub...
 
-git push -u origin main
+if not "%GH_TOKEN%"=="" (
+    git push -u https://%GH_TOKEN%@github.com/Ishaaaan10/unitrace-lost-and-found.git main
+) else (
+    git push -u origin main
+)
 
 if %ERRORLEVEL% equ 0 (
     echo.
@@ -31,8 +41,9 @@ if %ERRORLEVEL% equ 0 (
     echo.
 ) else (
     echo.
-    echo If authentication failed, you can generate a Personal Access Token on GitHub
-    echo at https://github.com/settings/tokens and use it as your password.
+    echo Push could not complete.
+    echo Tip: Generate a token at https://github.com/settings/tokens (classic, tick 'repo')
+    echo and re-run this script, pasting that token!
 )
 
 pause
