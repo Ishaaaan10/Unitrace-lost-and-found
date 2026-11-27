@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { Item } from '../lib/types';
+import { formatDisplayDate } from '../lib/dateUtils';
 
 interface ItemCardProps {
   item: Item;
@@ -146,12 +147,11 @@ export default function ItemCard({ item, hasMatch }: ItemCardProps) {
               <span className="font-medium text-slate-300">{item.location}</span>
             </div>
             <div className="flex items-center justify-between text-slate-400 text-[11px]">
-              <div className="flex items-center gap-1">
-                <Calendar className="w-3 h-3 text-slate-500" />
-                <span>{item.date}</span>
-                {item.time && <span>• {item.time}</span>}
+              <div className="flex items-center gap-1 font-medium text-slate-300">
+                <Calendar className="w-3.5 h-3.5 text-brand-400 shrink-0" />
+                <span>{formatDisplayDate(item.date, item.time)}</span>
               </div>
-              <span className="text-slate-500">By {item.reporterName}</span>
+              <span className="text-slate-500 truncate max-w-[120px]">By {item.reporterName}</span>
             </div>
           </div>
         </div>

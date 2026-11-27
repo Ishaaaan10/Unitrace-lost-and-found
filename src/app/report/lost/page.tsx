@@ -19,6 +19,7 @@ import {
 import { useItems } from '../../../context/ItemsContext';
 import { useAuth } from '../../../context/AuthContext';
 import { CAMPUS_ZONES } from '../../../lib/mockData';
+import { getCurrentDateString, getCurrentTimeString } from '../../../lib/dateUtils';
 import { ItemCategory } from '../../../lib/types';
 
 const SAMPLE_PRESET_IMAGES = [
@@ -57,8 +58,8 @@ export default function ReportLostItemPage() {
   const [category, setCategory] = useState<ItemCategory>('ELECTRONICS');
   const [campusZoneId, setCampusZoneId] = useState(CAMPUS_ZONES[0].id);
   const [specificLocation, setSpecificLocation] = useState('');
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
-  const [time, setTime] = useState('14:00');
+  const [date, setDate] = useState(getCurrentDateString());
+  const [time, setTime] = useState(getCurrentTimeString());
   const [description, setDescription] = useState('');
   const [secretQuestion, setSecretQuestion] = useState('');
   const [secretAnswer, setSecretAnswer] = useState('');
@@ -208,30 +209,47 @@ export default function ReportLostItemPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-300">
-              Approximate Date Lost <span className="text-rose-400">*</span>
-            </label>
-            <input
-              type="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
-            />
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-slate-300">
+              When Did You Lose It? <span className="text-rose-400">*</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                setDate(getCurrentDateString());
+                setTime(getCurrentTimeString());
+              }}
+              className="text-[11px] font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1 hover:underline cursor-pointer"
+            >
+              <Clock className="w-3 h-3" /> Set to Right Now
+            </button>
           </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label className="block text-[11px] font-medium text-slate-400">
+                Date Lost
+              </label>
+              <input
+                type="date"
+                required
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              />
+            </div>
 
-          <div className="space-y-1.5">
-            <label className="block text-xs font-bold text-slate-300">
-              Approximate Time
-            </label>
-            <input
-              type="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
-            />
+            <div className="space-y-1.5">
+              <label className="block text-[11px] font-medium text-slate-400">
+                Time (Approximate)
+              </label>
+              <input
+                type="time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                className="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+              />
+            </div>
           </div>
         </div>
 

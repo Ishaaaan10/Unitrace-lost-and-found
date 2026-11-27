@@ -22,6 +22,7 @@ import { useItems } from '../../../context/ItemsContext';
 import { useAuth } from '../../../context/AuthContext';
 import { findMatchesForItem } from '../../../lib/matchEngine';
 import { CAMPUS_ZONES } from '../../../lib/mockData';
+import { formatDisplayDate, formatTime12Hour } from '../../../lib/dateUtils';
 import ClaimModal from '../../../components/ClaimModal';
 import SmartMatchBanner from '../../../components/SmartMatchBanner';
 import DigitalClaimPass from '../../../components/DigitalClaimPass';
@@ -184,12 +185,14 @@ export default function ItemDetailPage() {
 
                 <div className="bg-slate-950/80 border border-slate-800/80 p-4 rounded-2xl space-y-1">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
-                    <Calendar className="w-4 h-4 text-slate-400" /> Date & Time Reported
+                    <Calendar className="w-4 h-4 text-brand-400" /> Date & Time Reported
                   </div>
-                  <p className="text-xs font-bold text-white">{item.date}</p>
+                  <p className="text-xs font-bold text-white">
+                    {formatDisplayDate(item.date)}
+                  </p>
                   {item.time && (
                     <p className="text-[11px] text-slate-400 flex items-center gap-1">
-                      <Clock className="w-3 h-3" /> Recorded around {item.time}
+                      <Clock className="w-3 h-3 text-slate-500" /> Recorded at {formatTime12Hour(item.time)}
                     </p>
                   )}
                 </div>

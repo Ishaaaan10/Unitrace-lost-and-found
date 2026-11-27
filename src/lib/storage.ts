@@ -2,10 +2,10 @@ import { Item, Claim, AppNotification, User } from './types';
 import { INITIAL_ITEMS, INITIAL_CLAIMS, INITIAL_NOTIFICATIONS, PRESET_USERS } from './mockData';
 
 const STORAGE_KEYS = {
-  ITEMS: 'unitrace_items_v1',
-  CLAIMS: 'unitrace_claims_v1',
-  NOTIFICATIONS: 'unitrace_notifications_v1',
-  CURRENT_USER: 'unitrace_user_v1',
+  ITEMS: 'unitrace_items_v2',
+  CLAIMS: 'unitrace_claims_v2',
+  NOTIFICATIONS: 'unitrace_notifications_v2',
+  CURRENT_USER: 'unitrace_user_v2',
 };
 
 // Safe access for SSR / Server Components
